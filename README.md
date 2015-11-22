@@ -3,7 +3,9 @@ Scripts to extend Folding Text
 
 Most of these are Applescript files with some hacky Javascript worked in where necessary. 
 To install scripts, see here: http://support.hogbaysoftware.com/t/how-to-install-a-script/75
-(TLDR: open Applescript editor, paste, run. I tend to use Fastscripts or TextExpander to call upon frequently used scripts, depending on whatever the most appropriate trigger is. 
+(TLDR: open Applescript editor, paste, run.) 
+
+I tend to use Fastscripts or TextExpander to call upon frequently used scripts, depending on whatever the most appropriate trigger is. 
 
 # Tag Due Items With Today
 
