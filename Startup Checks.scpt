@@ -14,10 +14,22 @@ tell application "FoldingText"
 		})
 
 	Node.commonAncestorsForNodes(tree.evaluateNodePath('//@due')).forEachNodeInSet(function(node) {
-		var now = String(moment().format('YYYY-MM-DD'));
-		var dueCheck = String(node.tag('due'));
-		if (dueCheck == now) {	
+		var now = moment().format('YYYY-MM-DD');
+		var dueCheck = new Date(node.tag('due'));
+		if (moment(dueCheck).isSame(now)) {	
 		node.addTag('today');
+		}
+		if (moment(dueCheck).isBefore(now)) {
+		node.addTag('overdue');
+		}
+		})	  
+
+	Node.commonAncestorsForNodes(tree.evaluateNodePath('//@lastdone')).forEachNodeInSet(function(node) {
+		var lassitude = moment().subtract(2, 'days');
+		var now = moment(lassitude).format('YYYY-MM-DD');
+		var dLastDone = moment(node.tag('lastdone')).format('YYYY-MM-DD');
+		if (moment(dLastDone).isBefore(now)) {
+		node.addTag('overdue');
 		}
 		})	  
       tree.endUpdates();
