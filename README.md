@@ -7,10 +7,6 @@ To install scripts, see here: http://support.hogbaysoftware.com/t/how-to-install
 
 I tend to use Fastscripts or TextExpander to call upon frequently used scripts, depending on whatever the most appropriate trigger is. 
 
-# Tag Due Items With Today
-
-This one evaluates your document for any node (item) tagged with @tomorrow and replaces @tomorrow with @today. It also keeps an eye out for @due tags, and if a due date matches today's date, it'll add a @today tag to that item. Useful to run first thing in the morning before getting down to work. Recommended trigger: Fastscripts.
-
 # Startup Checks
 
 This is a script to run on a document at start-up, or at the beginning of each new day, which is likely to be more useful if most of your tasks are contained in a single document. The script replaces any @tomorrow tags with @today tags, checks for any due dates that match today's date (and if so, tags any associated tasks with @today) and checks for any due dates that have passed (and on finding them, tags any associated tasks with @overdue). 
