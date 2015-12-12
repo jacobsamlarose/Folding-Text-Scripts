@@ -11,3 +11,10 @@ I tend to use Fastscripts or TextExpander to call upon frequently used scripts, 
 
 This one evaluates your document for any node (item) tagged with @tomorrow and replaces @tomorrow with @today. It also keeps an eye out for @due tags, and if a due date matches today's date, it'll add a @today tag to that item. Useful to run first thing in the morning before getting down to work. Recommended trigger: Fastscripts.
 
+# Startup Checks
+
+This is a script to run on a document at start-up, or at the beginning of each new day, which is likely to be more useful if most of your tasks are contained in a single document. The script replaces any @tomorrow tags with @today tags, checks for any due dates that match today's date (and if so, tags any associated tasks with @today) and checks for any due dates that have passed (and on finding them, tags any associated tasks with @overdue). 
+
+The final case deals with recurring tasks. If a task tagged @lastdone([date/time]) is found and the date/time value in the tag falls before today's date + a period of lassitude, the script marks that task as overdue. You can adjust lassitude according to your own needs— I've allowed 2 days to give me a little leeway for weekends. 
+
+Note: Much of the automated functionality for dealing with recurring tasks is contained within a hacked version of the archive script, which places a copy of a completed recurring task in the archive, but also places a fresh copy in a new project titled "tomorrow", capturing date/time within a "@lastdone" tag automatically. 
